@@ -1,0 +1,10 @@
+# 素材处理管线（照片超分 / 深度图 / 目标检测）所需的额外依赖
+# 安装：.venv/bin/pip install -r requirements-ml.txt
+#
+# torch 在 Apple Silicon 上会自动使用 MPS 后端（tools/depth.py、tools/detect.py
+# 会自动探测），在其它平台回退到 CPU。首次运行会从 Hugging Face 下载模型权重。
+
+-r requirements.txt
+
+torch==2.14.0
+transformers==5.17.0

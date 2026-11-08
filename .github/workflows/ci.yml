@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  typecheck:
+    name: TypeScript 类型检查
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 类型检查
+        run: npm run typecheck
+
+  bundle:
+    name: 渲染包构建（冒烟测试）
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: typecheck
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 安装 Chrome
+        run: npx remotion browser ensure
+
+      - name: 构建渲染包
+        run: npx remotion bundle src/index.ts
+
+      - name: 渲染测试帧
+        run: npx remotion still src/index.ts MV out/ci-still.png --frame=120

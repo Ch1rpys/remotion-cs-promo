@@ -1,0 +1,56 @@
+{
+  "name": "cs-mv",
+  "version": "1.0.0",
+  "private": true,
+  "description": "计算机科学与技术 · 专业宣传片 —— 由 Remotion + Three.js 程序化生成的 3 分 44 秒 1080p60 成片",
+  "license": "CC-BY-NC-SA-4.0",
+  "keywords": [
+    "remotion",
+    "three.js",
+    "react",
+    "promotional-video",
+    "computer-science",
+    "threejs",
+    "程序化生成"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<your-username>/cs-mv.git"
+  },
+  "homepage": "https://github.com/<your-username>/cs-mv#readme",
+  "bugs": {
+    "url": "https://github.com/<your-username>/cs-mv/issues"
+  },
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts MV out/cs-mv.mp4",
+    "render:share": "remotion render src/index.ts MV out/cs-mv-share.mp4 --crf=26",
+    "still": "remotion still src/index.ts MV out/still.png",
+    "typecheck": "tsc --noEmit",
+    "stills": "node tools/stills.mjs",
+    "sheet": "python3 tools/sheet.py"
+  },
+  "dependencies": {
+    "@react-three/drei": "10.7.9",
+    "@react-three/fiber": "9.8.1",
+    "@react-three/postprocessing": "3.1.3",
+    "@remotion/bundler": "4.0.529",
+    "@remotion/cli": "4.0.529",
+    "@remotion/fonts": "^4.0.529",
+    "@remotion/renderer": "4.0.529",
+    "@remotion/three": "4.0.529",
+    "postprocessing": "^6.37.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.529",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/three": "^0.186.0",
+    "typescript": "^5.9.0"
+  }
+}

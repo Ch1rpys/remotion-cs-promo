@@ -1,0 +1,47 @@
+# ---- Node / Remotion ----
+node_modules/
+.remotion/
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# ---- Python ----
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# ---- macOS ----
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# ---- Editors ----
+.idea/
+.vscode/
+*.swp
+
+# ---- Secrets ----
+.env
+.env.*
+!.env.example
+
+# ---- Render output & intermediate assets (regenerable) ----
+out/
+
+# ---- Audio: soundfonts & render scratch ----
+audio/sf/
+audio/build/
+audio/__pycache__/
+
+# ---- Asset pipeline: raw inputs, upscaled intermediates, local binaries ----
+tools/up/
+tools/raw/
+tools/esrgan/
+tools/*.jpg
