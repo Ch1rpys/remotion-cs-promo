@@ -1,5 +1,5 @@
 {
-  "name": "cs-mv",
+  "name": "remotion-cs-promo",
   "version": "1.0.0",
   "private": true,
   "description": "计算机科学与技术 · 专业宣传片 —— 由 Remotion + Three.js 程序化生成的 3 分 44 秒 1080p60 成片",
@@ -18,16 +18,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<your-username>/cs-mv.git"
+    "url": "https://github.com/Ch1rpys/remotion-cs-promo.git"
   },
-  "homepage": "https://github.com/<your-username>/cs-mv#readme",
+  "homepage": "https://github.com/Ch1rpys/remotion-cs-promo#readme",
   "bugs": {
-    "url": "https://github.com/<your-username>/cs-mv/issues"
+    "url": "https://github.com/Ch1rpys/remotion-cs-promo/issues"
   },
   "scripts": {
     "studio": "remotion studio src/index.ts",
-    "render": "remotion render src/index.ts MV out/cs-mv.mp4",
-    "render:share": "remotion render src/index.ts MV out/cs-mv-share.mp4 --crf=26",
+    "render": "remotion render src/index.ts MV out/remotion-cs-promo.mp4",
+    "render:share": "remotion render src/index.ts MV out/remotion-cs-promo-share.mp4 --crf=26",
     "still": "remotion still src/index.ts MV out/still.png",
     "typecheck": "tsc --noEmit",
     "stills": "node tools/stills.mjs",

@@ -79,8 +79,8 @@ Studio 打开后即可逐帧查看、拖动时间轴、检查字幕与遮幅安�
 ### 3. 渲染成片
 
 ```bash
-npm run render          # 输出 out/cs-mv.mp4（母带：H.264 / CRF 14）
-npm run render:share    # 输出 out/cs-mv-share.mp4（分享版：CRF 26，体积更小）
+npm run render          # 输出 out/remotion-cs-promo.mp4（母带：H.264 / CRF 14）
+npm run render:share    # 输出 out/remotion-cs-promo-share.mp4（分享版：CRF 26，体积更小）
 ```
 
 > 完整渲染 13,440 帧需要一定时间（MacBook 上约 40–70 分钟，取决于是否开启硬件编码）。只想看某一帧请用 `npm run still`。
@@ -97,7 +97,7 @@ python tools/sheet.py chk 3 640        # 拼接成一张联络表便于整体审
 ## 项目结构
 
 ```
-cs-mv/
+remotion-cs-promo/
 ├── src/
 │   ├── index.ts              # Remotion 入口（registerRoot）
 │   ├── Root.tsx              # Composition 定义：MV / 1920×1080 / 60fps / 13440 帧
@@ -338,8 +338,8 @@ tools/prep_new.sh
 | 命令 | 说明 |
 | --- | --- |
 | `npm run studio` | 打开 Remotion Studio 预览 |
-| `npm run render` | 渲染母带 `out/cs-mv.mp4`（H.264 / CRF 14） |
-| `npm run render:share` | 渲染分享版 `out/cs-mv-share.mp4`（CRF 26） |
+| `npm run render` | 渲染母带 `out/remotion-cs-promo.mp4`（H.264 / CRF 14） |
+| `npm run render:share` | 渲染分享版 `out/remotion-cs-promo-share.mp4`（CRF 26） |
 | `npm run still` | 渲染当前帧静帧 |
 | `npm run typecheck` | TypeScript 类型检查 |
 | `npm run stills -- 1.5 44` | 批量抽帧到 `out/stills/` |
@@ -349,24 +349,20 @@ tools/prep_new.sh
 
 ## 发布到 GitHub
 
-仓库已经可以推送，但推送前请先替换以下占位内容：
+仓库名：**`remotion-cs-promo`** —— <https://github.com/Ch1rpys/remotion-cs-promo>
 
-| 位置 | 需要修改 |
+```bash
+git remote add origin https://github.com/Ch1rpys/remotion-cs-promo.git
+git push -u origin main
+```
+
+推送后建议补齐以下信息：
+
+| 位置 | 内容 |
 | --- | --- |
-| `package.json` | `repository` / `homepage` / `bugs` 中的 `<your-username>` |
 | `README.md` | 顶部的徽章链接（可选）、封面图与联系方式 |
 | `LICENSE` | 协议本身无需修改；版权人信息可按需补充 |
 | `CREDITS.md` | 若替换了照片或字体，同步更新来源说明 |
-
-推送步骤：
-
-```bash
-git init -b main
-git add -A
-git commit -m "feat: 计算机科学与技术专业宣传片 v1.0"
-git remote add origin https://github.com/<your-username>/cs-mv.git
-git push -u origin main
-```
 
 ### 仓库体积
 
