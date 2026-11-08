@@ -79,7 +79,7 @@ NASA 影像说明：NASA 产出的影像通常不受版权限制，但可能涉�
 
 | 工具 / 模型 | 用途 | 许可 |
 | --- | --- | --- |
-| [Remotion](https://www.remotion.dev/) 4.0.529 | 视频合成与渲染 | Remotion License（见下方提示） |
+| [Remotion](https://www.remotion.dev/) 4.0.541 | 视频合成与渲染 | Remotion License（见下方提示） |
 | [Three.js](https://threejs.org/) 0.186.1 | 3D 渲染 | MIT |
 | [React](https://react.dev/) 19.2 | UI 框架 | MIT |
 | [postprocessing](https://github.com/pmndrs/postprocessing) 6.37 | Bloom / 色差 | MIT |

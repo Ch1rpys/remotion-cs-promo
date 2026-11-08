@@ -6,7 +6,7 @@
 
 一支由代码驱动的专业宣传片。全部画面由 [Remotion](https://www.remotion.dev/) + [Three.js](https://threejs.org/) 程序化生成，配乐由 Python 逐样本合成。
 
-[![Remotion](https://img.shields.io/badge/Remotion-4.0.529-black)](https://www.remotion.dev/)
+[![Remotion](https://img.shields.io/badge/Remotion-4.0.541-black)](https://www.remotion.dev/)
 [![React](https://img.shields.io/badge/React-19.2-61dafb)](https://react.dev/)
 [![Three.js](https://img.shields.io/badge/Three.js-0.186.1-black)](https://threejs.org/)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey)](./LICENSE)
