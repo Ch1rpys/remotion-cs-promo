@@ -78,6 +78,15 @@
 npm install
 ```
 
+> 若要重新生成配乐或素材，还需要 Python 依赖：
+> ```bash
+> python3 -m venv .venv
+> .venv/bin/pip install -r requirements.txt          # 音频渲染核心
+> .venv/bin/pip install -r requirements-ml.txt      # 另需超分 / 深度估计 / 目标检测
+> ```
+> Python 依赖已全部锁定精确版本；`package.json` 中的 `overrides` 同样锁定了三个存在
+> 安全公告的传递依赖（`zod` / `source-map-js` / `fast-uri`），以避免它们随上游漂移。
+
 ### 2. 打开 Remotion Studio 预览
 
 ```bash

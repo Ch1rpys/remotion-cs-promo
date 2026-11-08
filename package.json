@@ -24,6 +24,11 @@
   "bugs": {
     "url": "https://github.com/Ch1rpys/remotion-cs-promo/issues"
   },
+  "overrides": {
+    "fast-uri": "3.1.9",
+    "source-map-js": "1.2.2",
+    "zod": "4.6.6"
+  },
   "scripts": {
     "studio": "remotion studio src/index.ts",
     "render": "remotion render src/index.ts MV out/remotion-cs-promo.mp4",

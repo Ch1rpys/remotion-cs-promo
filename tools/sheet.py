@@ -7,8 +7,8 @@ from PIL import Image, ImageDraw, ImageFont
 prefix = sys.argv[1]
 cols = int(sys.argv[2]) if len(sys.argv) > 2 else 3
 tw = int(sys.argv[3]) if len(sys.argv) > 3 else 640
-files = sorted(Path("out/stills").glob(f"{prefix}_*.jpg"), key=lambda p: float(p.stem.split("_")[-1]))
-files = [f for f in files if not f.stem.endswith("sheet")]
+files = [f for f in Path("out/stills").glob(f"{prefix}_*.jpg") if not f.stem.endswith("sheet")]
+files = sorted(files, key=lambda p: float(p.stem.split("_")[-1]))
 ims = [Image.open(f) for f in files]
 th = int(tw * 9 / 16)
 rows = (len(ims) + cols - 1) // cols
