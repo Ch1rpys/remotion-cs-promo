@@ -34,6 +34,7 @@ __pycache__/
 
 # ---- Render output & intermediate assets (regenerable) ----
 out/
+build/
 
 # ---- Audio: soundfonts & render scratch ----
 audio/sf/
