@@ -79,9 +79,8 @@ Studio 打开后即可逐帧查看、拖动时间轴、检查字幕与遮幅安�
 ### 3. 渲染成片
 
 ```bash
-npm run render          # 输出 out/cs-mv.mp4
-npm run render:h264     # 输出高质量母版 out/master.mp4
-npm run render:share    # 输出分享版 out/share.mp4
+npm run render          # 输出 out/cs-mv.mp4（母带：H.264 / CRF 14）
+npm run render:share    # 输出 out/cs-mv-share.mp4（分享版：CRF 26，体积更小）
 ```
 
 > 完整渲染 13,440 帧需要一定时间（MacBook 上约 40–70 分钟，取决于是否开启硬件编码）。只想看某一帧请用 `npm run still`。
@@ -339,9 +338,8 @@ tools/prep_new.sh
 | 命令 | 说明 |
 | --- | --- |
 | `npm run studio` | 打开 Remotion Studio 预览 |
-| `npm run render` | 渲染 `out/cs-mv.mp4` |
-| `npm run render:h264` | 渲染高质量母版 `out/master.mp4` |
-| `npm run render:share` | 渲染分享版 `out/share.mp4` |
+| `npm run render` | 渲染母带 `out/cs-mv.mp4`（H.264 / CRF 14） |
+| `npm run render:share` | 渲染分享版 `out/cs-mv-share.mp4`（CRF 26） |
 | `npm run still` | 渲染当前帧静帧 |
 | `npm run typecheck` | TypeScript 类型检查 |
 | `npm run stills -- 1.5 44` | 批量抽帧到 `out/stills/` |
