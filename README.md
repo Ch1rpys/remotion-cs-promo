@@ -44,6 +44,7 @@
 - [常用命令](#常用命令)
 - [文档与素材授权](#文档与素材授权)
 - [许可协议](#许可协议)
+- [免责声明](#免责声明)
 
 ---
 
@@ -72,11 +73,16 @@
 - **Chrome / Chromium** —— Remotion 渲染需要，可由 Remotion 自动下载
 - **FluidSynth** —— 仅在重新合成配乐时需要（`brew install fluid synth`）
 
-### 1. 安装依赖
+### 1. 获取代码并安装依赖
 
 ```bash
+git clone https://github.com/Ch1rpys/remotion-cs-promo.git
+cd remotion-cs-promo
 npm install
 ```
+
+> **仓库约 140 MB** —— `public/` 下的母带配乐、字体与照片占 138 MB。本仓库**未使用 Git LFS**，
+> 全部以普通 Git 对象提交，任何人 `git clone` 即可直接使用，无需任何额外工具。
 
 > 若要重新生成配乐或素材，还需要 Python 依赖：
 > ```bash
@@ -84,8 +90,9 @@ npm install
 > .venv/bin/pip install -r requirements.txt          # 音频渲染核心
 > .venv/bin/pip install -r requirements-ml.txt      # 另需超分 / 深度估计 / 目标检测
 > ```
-> Python 依赖已全部锁定精确版本；`package.json` 中的 `overrides` 同样锁定了三个存在
-> 安全公告的传递依赖（`zod` / `source-map-js` / `fast-uri`），以避免它们随上游漂移。
+> Python 依赖已全部锁定精确版本。npm 侧同理：`zod` 由 Remotion 4.0.541 上游锁定在已修复的
+> 4.6.7，`package.json` 中的 `overrides` 另外锁定了 `source-map-js` 与 `fast-uri` 两个
+> 存在安全公告的传递依赖，避免它们随上游漂移。
 
 ### 2. 打开 Remotion Studio 预览
 
@@ -363,37 +370,6 @@ tools/prep_new.sh
 | `npm run typecheck` | TypeScript 类型检查 |
 | `npm run stills -- 1.5 44` | 批量抽帧到 `out/stills/` |
 | `npm run sheet -- chk` | 拼接抽帧联络表 |
-
----
-
-## 发布到 GitHub
-
-仓库名：**`remotion-cs-promo`** —— <https://github.com/Ch1rpys/remotion-cs-promo>
-
-```bash
-git remote add origin https://github.com/Ch1rpys/remotion-cs-promo.git
-git push -u origin main
-```
-
-推送后建议补齐以下信息：
-
-| 位置 | 内容 |
-| --- | --- |
-| `README.md` | 顶部的徽章链接（可选）、封面图与联系方式 |
-| `LICENSE` | 协议本身无需修改；版权人信息可按需补充 |
-| `CREDITS.md` | 若替换了照片或字体，同步更新来源说明 |
-
-### 仓库体积
-
-`public/` 约 **138 MB**，其中 `audio/music.wav` 62 MB、字体 42 MB、照片与深度图 28 MB、贴图 7 MB。
-本仓库**未使用 Git LFS**，全部以普通 Git 对象提交 —— 任何人 `git clone` 即可直接使用，无需额外工具。
-若后续素材继续增长，可改用 [Git LFS](https://git-lfs.com/)（GitHub 免费额度为 10 GiB 存储 + 10 GiB 流量/月）。
-
-### 建议的 GitHub 配置
-
-- **Description**：`计算机科学与技术专业宣传片 · Remotion + Three.js 程序化生成 · 1080p60`
-- **Topics**：`remotion` `threejs` `react` `promotional-video` `computer-science` `程序化生成`
-- **About → Website**：留空或指向成片发布页
 
 ---
 
